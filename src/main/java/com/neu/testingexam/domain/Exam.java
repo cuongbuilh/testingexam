@@ -45,10 +45,10 @@ public class Exam {
     @JoinColumn(name = "creator_id", referencedColumnName = "id")
     private Account accountByCreatorId;
 
-    @OneToMany(mappedBy = "examByExamId")
+    @OneToMany(mappedBy = "examByExamId", fetch = FetchType.LAZY)
     private Collection<ExamQuestion> examQuestionsById;
 
-    @OneToMany(mappedBy = "examByExam")
+    @OneToMany(mappedBy = "examByExam", fetch = FetchType.LAZY)
     private Collection<Result> resultsById;
 
     public int getId() {

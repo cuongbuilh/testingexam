@@ -49,16 +49,16 @@ public class Account {
     @Column(name = "active")
     private Boolean active;
 
-    @OneToMany(mappedBy = "accountByCreatorId")
+    @OneToMany(mappedBy = "accountByCreatorId", fetch = FetchType.LAZY)
     private Collection<Answer> answersById;
 
-    @OneToMany(mappedBy = "accountByCreatorId")
+    @OneToMany(mappedBy = "accountByCreatorId", fetch = FetchType.LAZY)
     private Collection<Exam> examsById;
 
-    @OneToMany(mappedBy = "accountByCreatorId")
+    @OneToMany(mappedBy = "accountByCreatorId", fetch = FetchType.LAZY)
     private Collection<Question> questionsById;
 
-    @OneToMany(mappedBy = "accountByAccountId")
+    @OneToMany(mappedBy = "accountByAccountId", fetch = FetchType.LAZY)
     private Collection<Result> resultsById;
 
     public int getId() {

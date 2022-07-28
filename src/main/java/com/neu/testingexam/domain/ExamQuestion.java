@@ -29,10 +29,10 @@ public class ExamQuestion {
     @JoinColumn(name = "question", referencedColumnName = "id")
     private Question questionByQuestion;
 
-    @OneToMany(mappedBy = "examQuestionByExamQuestionId")
+    @OneToMany(mappedBy = "examQuestionByExamQuestionId", fetch = FetchType.LAZY)
     private Collection<ExamQuestionAnswer> examQuestionAnswersById;
 
-    @OneToMany(mappedBy = "examQuestionByExamQuestionId")
+    @OneToMany(mappedBy = "examQuestionByExamQuestionId", fetch = FetchType.LAZY)
     private Collection<ResultItem> resultItemsById;
 
     public int getId() {
